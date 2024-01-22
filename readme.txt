@@ -6,5 +6,3 @@
 6) as an admin to manage the details, creating, searching, deleting and querying is provided.
 
 Authors: 	Sai Teja Sankarneni
-		Nishant Varma Indukuri
-		Shanawaz pathan
