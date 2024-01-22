@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('header') %>
+    <title>Order Details</title>
+    <style>
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      th, td {
+        text-align: left;
+        padding: 8px;
+        border-bottom: 1px solid #ddd;
+      }
+
+      th {
+        background-color: #4CAF50;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="/orderdetails" method="POST">
+      <label for="orderid">Order ID:</label>
+      <input type="text" id="orderid" name="orderid"><br>
+
+      <label for="itemid">Item ID:</label>
+      <input type="text" id="itemid" name="itemid"><br>
+
+      <label for="preparationtime">Preparation Time:</label>
+      <input type="text" id="preparationtime" name="preparationtime"><br>
+
+      <label for="deliverytime">Delivery Time:</label>
+      <input type="text" id="deliverytime" name="deliverytime"><br>
+
+      <button type="submit">Submit</button>
+    </form>
+    <form id="search-form">
+      <label for="search-input">Search:</label>
+      <input type="text" id="search-input" name="search">
+      <button type="submit">Search</button>
+    </form>
+    <h1>Order Details</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Order ID</th>
+          <th>Item ID</th>
+          <th>Preparation Time</th>
+          <th>Delivery Time</th>
+          <th>Total Time</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% orderdetails.forEach(function(od) { %>
+          <tr>
+            <td><%= od.orderdetailid %></td>
+            <td><%= od.orderid %></td>
+            <td><%= od.itemid %></td>
+            <td><%= od.preparationtime %></td>
+            <td><%= od.deliverytime %></td>
+            <td><%= od.totaltime %></td>
+            <td><button class="delete-orderdetail" data-orderdetailid="<%= od.orderdetailid %>">Delete</button></td>
+          </tr>
+        <% }); %>
+      </tbody>
+    </table>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+  $(document).ready(function() {
+    $('.delete-orderdetail').click(function() {
+      const orderdetailid = $(this).data('orderdetailid');
+      
+      $.ajax({
+        url: `/orderdetails/${orderdetailid}`,
+        type: 'DELETE',
+        success: function(result) {
+          location.reload();
+        },
+        error: function(err) {
+          alert('Error: Could not delete order detail.');
+        }
+      });
+    });
+  });
+</script>
+<script>
+  $('#search-form').submit(function(e) {
+    e.preventDefault();
+    const searchTerm = $('#search-input').val().toLowerCase();
+    $('tbody tr').each(function() {
+      const rowText = $(this).text().toLowerCase();
+      if (rowText.indexOf(searchTerm) !== -1) {
+        $(this).show();
+      } else {
+        $(this).hide();
+      }
+    });
+  });
+</script>
+  </body>
+</html>

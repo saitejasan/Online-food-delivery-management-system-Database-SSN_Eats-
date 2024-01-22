@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('header') %>
+    <title>Orders</title>
+    <style>
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      th, td {
+        text-align: left;
+        padding: 8px;
+        border-bottom: 1px solid #ddd;
+      }
+
+      th {
+        background-color: #4CAF50;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Orders</h1>
+    <form action="/orders" method="post">
+      <label for="ordernumber">Order Number:</label>
+      <input type="text" name="ordernumber" id="ordernumber" required><br>
+      
+      <label for="restaurantid">Restaurant ID:</label>
+      <input type="number" name="restaurantid" id="restaurantid" required><br>
+      
+      <label for="userid">User ID:</label>
+      <input type="number" name="userid" id="userid" required><br>
+      
+      <label for="dpid">Delivery Partner ID:</label>
+      <input type="number" name="dpid" id="dpid" required><br>
+    
+      <button type="submit">Add Order</button>
+    </form>
+    <form id="search-form">
+      <label for="search-input">Search:</label>
+      <input type="text" id="search-input" name="search">
+      <button type="submit">Search</button>
+    </form>    
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Order Number</th>
+          <th>Restaurant ID</th>
+          <th>User ID</th>
+          <th>Delivery Partner ID</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% orders.forEach(function(o) { %>
+          <tr>
+            <td><%= o.orderid %></td>
+            <td><%= o.ordernumber %></td>
+            <td><%= o.restaurantid %></td>
+            <td><%= o.userid %></td>
+            <td><%= o.dpid %></td>
+            <td><button class="delete-order" data-orderid="<%= o.orderid %>">Delete</button></td>
+          </tr>
+        <% }); %>
+      </tbody>
+    </table>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Add this script at the end of the <body> tag -->
+<script>
+  $(document).ready(function() {
+    $('.delete-order').click(function() {
+      const orderid = $(this).data('orderid');
+      
+      $.ajax({
+        url: `/orders/${orderid}`,
+        type: 'DELETE',
+        success: function(result) {
+          location.reload();
+        },
+        error: function(err) {
+          alert('Error: Could not delete order.');
+        }
+      });
+    });
+  });
+</script>
+<script>
+  $('#search-form').submit(function(e) {
+    e.preventDefault();
+    const searchTerm = $('#search-input').val().toLowerCase();
+    $('tbody tr').each(function() {
+      const rowText = $(this).text().toLowerCase();
+      if (rowText.indexOf(searchTerm) !== -1) {
+        $(this).show();
+      } else {
+        $(this).hide();
+      }
+    });
+  });
+</script>
+  </body>
+</html>

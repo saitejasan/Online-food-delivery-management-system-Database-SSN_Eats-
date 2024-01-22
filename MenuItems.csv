@@ -1,0 +1,482 @@
+ItemID,ItemName,Price,Type
+1,Boudin noir,34.33,Vegan
+2,Naan,45.66,Veg
+3,Kedgeree,28.91,Veg
+4,Truffle,59.05,Veg
+5,Kedgeree,47.32,Veg
+6,Salsiccia,53.43,Vegan
+7,Irish stew,46.64,Non-Veg
+8,Pate chinois,46.79,Non-Veg
+9,Potato chips,32.44,Non-Veg
+10,Gyro,43.93,Veg
+11,Mulligatawny soup,25.65,Non-Veg
+12,Steak,32.56,Veg
+13,Vegetable curry,17.35,Non-Veg
+14,Risotto,59.77,Veg
+15,Waldorf salad,54.79,Non-Veg
+16,Nicoise salad,58.05,Veg
+17,Sweet potato pie,11.98,Veg
+18,Steamed lobster,16.56,Veg
+19,Hungarian goulash,31.59,Non-Veg
+20,Sticky toffee pudding,41.39,Non-Veg
+21,Funnel cake,54.5,Veg
+22,Churros,54.99,Vegan
+23,Gravlax,25.29,Non-Veg
+24,Worcestershire sauce,18.99,Non-Veg
+25,Falafel,43.85,Non-Veg
+26,Yum cha,25.12,Non-Veg
+27,Feijoada,45.4,Veg
+28,Asam laksa,42.63,Non-Veg
+29,Quesadilla,19.4,Non-Veg
+30,Saimin,54.02,Non-Veg
+31,Smorrebrod,43.33,Non-Veg
+32,General Tso's chicken,47.69,Non-Veg
+33,Worcestershire sauce,59.49,Veg
+34,Pierogi,49.68,Veg
+35,Morcon,43.41,Non-Veg
+36,Hoisin sauce,30.6,Non-Veg
+37,Biltong,24.98,Veg
+38,Nicoise salad,52.47,Vegan
+39,Lemon chicken,15.84,Non-Veg
+40,Steamed buns,39.02,Vegan
+41,Squash casserole,33.79,Non-Veg
+42,Waffles,36.09,Vegan
+43,Ponzu sauce,51.99,Vegan
+44,Katsuobushi,34.32,Vegan
+45,Avgolemono,53.22,Non-Veg
+46,Sauerbraten,23.04,Non-Veg
+47,Mamaliga,17.75,Vegan
+48,Montadito,52.94,Vegan
+49,Locro,18.98,Veg
+50,Mee siam,21.44,Veg
+51,Mafe,59.78,Vegan
+52,Tea-smoked duck,39.77,Vegan
+53,Banh mi,30.04,Veg
+54,Cucumber salad,36.07,Veg
+55,Lomo saltado,59.73,Vegan
+56,Espetada,31.25,Non-Veg
+57,Worcestershire sauce,32.07,Non-Veg
+58,Biltong,49.46,Non-Veg
+59,Cannoli,34.93,Non-Veg
+60,Fondue,58.07,Vegan
+61,Ramen,30.42,Vegan
+62,Biryani,16.46,Non-Veg
+63,Quiche,33.19,Vegan
+64,Saikoro steak,21.45,Veg
+65,Za'atar,33.63,Veg
+66,Pappardelle al ragu,36.64,Veg
+67,Sweet potato casserole,46.92,Vegan
+68,Nikujaga,44.09,Vegan
+69,Chicken parmigiana,14.71,Non-Veg
+70,Croissant,40.47,Vegan
+71,Yakitori,20.73,Veg
+72,Rueben,44.24,Vegan
+73,Lau lau,56.8,Non-Veg
+74,Shakshuka,30.64,Vegan
+75,Seared scallops,24.95,Vegan
+76,Veal Oscar,26.77,Non-Veg
+77,Kibbeh nayeh,46.11,Veg
+78,Tagine,53.75,Non-Veg
+79,Potato chips,57.33,Vegan
+80,Meatballs,20.31,Non-Veg
+81,Croissant,17.14,Non-Veg
+82,Moambe,16.46,Vegan
+83,Chirashi sushi,47.21,Vegan
+84,Fufu and soup,32.11,Vegan
+85,Chirashi sushi,59.51,Vegan
+86,Spatzle,40.43,Non-Veg
+87,Nems,41.94,Vegan
+88,Jamaican jerk chicken,58.83,Vegan
+89,Popcorn,48.94,Veg
+90,Meatballs,50.75,Veg
+91,Katsuobushi,12.63,Veg
+92,Vichyssoise,50.23,Veg
+93,Efo riro,23.32,Veg
+94,Turkish pizza,41.62,Non-Veg
+95,Zurek,32.19,Non-Veg
+96,Cannoli,10.96,Veg
+97,Briyani,23.6,Vegan
+98,Wild mushroom risotto,48.81,Vegan
+99,Tarte flambee,59.45,Veg
+100,Xoi,12.74,Veg
+101,Yakitori,40.12,Vegan
+102,Cheesecake,22.88,Vegan
+103,Meat pie,17.84,Vegan
+104,Seared scallops,58.86,Veg
+105,Zhajiang noodles,34.04,Veg
+106,Frittata,30.6,Non-Veg
+107,Gallo pinto,51.67,Non-Veg
+108,Baba ghanoush,39.42,Vegan
+109,Akara,34.76,Veg
+110,Pakora,34.78,Vegan
+111,Crepe,18.22,Non-Veg
+112,Goulash,10.37,Veg
+113,Bacalhau a bras,25.13,Veg
+114,Pudding,33.49,Vegan
+115,Risotto,41.01,Veg
+116,Udon,18.06,Veg
+117,Chowder,29.77,Non-Veg
+118,Shish kebab,40.97,Non-Veg
+119,Enchiladas,41.49,Vegan
+120,Falafel,50.7,Non-Veg
+121,Kachori,59.98,Veg
+122,Stollen,51.95,Non-Veg
+123,Cucumber salad,30.04,Vegan
+124,T-bone steak,55.76,Non-Veg
+125,Samosas,21.77,Veg
+126,Shrimp cocktail,36.58,Veg
+127,Cucumber salad,24.57,Non-Veg
+128,Borek,56.82,Veg
+129,Dosas,28.4,Veg
+130,Konigsberger Klopse,44.71,Non-Veg
+131,Lomo saltado,56.94,Non-Veg
+132,Carne asada,10.54,Veg
+133,Scrambled eggs,10.18,Non-Veg
+134,Konigsberger Klopse,45.7,Vegan
+135,Torta,43.91,Vegan
+136,Chana masala,40.26,Non-Veg
+137,Fish tacos,14.13,Veg
+138,Dak galbi,37.31,Veg
+139,Cassoulet,53.34,Vegan
+140,Burrito,47.13,Non-Veg
+141,Orange chicken,21.35,Veg
+142,Pemmican,56.94,Veg
+143,Vichyssoise,46.41,Vegan
+144,Asam laksa,52.35,Veg
+145,Ponzu sauce,19.62,Veg
+146,Scrambled eggs,45.18,Veg
+147,Scrambled eggs,40.98,Veg
+148,Mango sticky rice,59.29,Vegan
+149,Zigong-style boiled fish,18.1,Vegan
+150,Mac and cheese,57.9,Vegan
+151,Dal makhani,55.05,Veg
+152,Puff pastry,14.62,Vegan
+153,Hot chicken,46.36,Vegan
+154,Greek salad,49.67,Vegan
+155,Quesadilla,51.86,Vegan
+156,Ratatouille,15.82,Non-Veg
+157,Mee siam,53.97,Vegan
+158,Migas,18.97,Non-Veg
+159,Hungarian goulash,47.93,Non-Veg
+160,Masala chai,52.11,Non-Veg
+161,Montadito,58.72,Non-Veg
+162,Spicy tuna roll,21.68,Non-Veg
+163,Onion soup,15.86,Vegan
+164,Yellow curry,33.6,Non-Veg
+165,Stuffed vine leaves,48.32,Non-Veg
+166,Chirashi sushi,36.86,Non-Veg
+167,Veal Oscar,56.65,Vegan
+168,Ma po tofu,43.27,Veg
+169,Spinach dip,40.74,Veg
+170,Eggplant parmesan,24.97,Veg
+171,Pork buns,33.52,Veg
+172,Gravlax,20.67,Non-Veg
+173,Souffle,33.16,Veg
+174,Samosas,41.75,Veg
+175,Chapati,23.37,Non-Veg
+176,Mango sticky rice,58.61,Veg
+177,Bobotie,20.48,Non-Veg
+178,Irish stew,10.36,Non-Veg
+179,Banh canh,12.83,Vegan
+180,Cheese fondue,15.87,Vegan
+181,Burrito,53.38,Non-Veg
+182,Snert,42.88,Vegan
+183,Fajitas,22.14,Vegan
+184,T-bone steak,19.25,Non-Veg
+185,Fanesca,50.29,Non-Veg
+186,Pretzel,54.78,Veg
+187,Wiener schnitzel,35.92,Vegan
+188,Waldorf salad,47.86,Veg
+189,Chicken parmigiana,17.93,Non-Veg
+190,Roquefort,25.76,Veg
+191,Skordalia,14.6,Non-Veg
+192,Dim sum,42.76,Veg
+193,Tandoori chicken,22.33,Veg
+194,Biltong,19.14,Veg
+195,Swiss roll,29.29,Non-Veg
+196,Babka,19.41,Non-Veg
+197,Smorrebrod,59.32,Veg
+198,Soy sauce,19.05,Non-Veg
+199,Vegemite on toast,10.8,Non-Veg
+200,Rice and beans,29.96,Non-Veg
+201,Pizza Margherita,36.18,Veg
+202,Mole poblano,25.73,Vegan
+203,Langos,18.79,Veg
+204,Tapenade,39.41,Veg
+205,Steamed lobster,34.15,Vegan
+206,Aligot,49.33,Non-Veg
+207,Pulled pork,19.62,Veg
+208,Zhajiang noodles,49.01,Veg
+209,Khao soi,50.74,Vegan
+210,Treacle tart,56.63,Veg
+211,Monkey bread,43.97,Veg
+212,Fufu,23.81,Veg
+213,Pork knuckle,19.74,Veg
+214,Quiche,42.17,Veg
+215,Adobo,30.73,Veg
+216,Lobster roll,47.2,Veg
+217,Onion soup,38.87,Vegan
+218,Oden,16.09,Veg
+219,Tortellini,20.7,Vegan
+220,Rumaki,55.89,Veg
+221,Croissant,18.22,Vegan
+222,Bulgogi,46.92,Veg
+223,Idli,24.55,Vegan
+224,Scrambled eggs,59.61,Vegan
+225,Dal makhani,12.44,Vegan
+226,Lau lau,31.71,Non-Veg
+227,Hamburger,46.09,Vegan
+228,Socca,10.07,Non-Veg
+229,Masala chai,38.18,Vegan
+230,Salsiccia,50.77,Vegan
+231,Feijoada,17.0,Veg
+232,Vegetable curry,38.97,Veg
+233,Caesar salad,15.42,Non-Veg
+234,Lentil soup,16.85,Vegan
+235,Pate en croute,33.22,Vegan
+236,Katsu curry,35.97,Vegan
+237,Cornish pasty,29.77,Vegan
+238,Greek salad,42.69,Vegan
+239,Pani puri,20.12,Non-Veg
+240,Steak,15.33,Non-Veg
+241,Fajitas,28.25,Veg
+242,Potjiekos,33.41,Non-Veg
+243,Mantl,50.82,Veg
+244,Kway teow,46.61,Veg
+245,Cheesecake,59.25,Veg
+246,Panzanella,41.36,Non-Veg
+247,Camarones al mojo de ajo,13.75,Non-Veg
+248,Chicken adobo,10.25,Non-Veg
+249,Chirashi sushi,14.28,Veg
+250,Cannoli,42.75,Non-Veg
+251,Saimin,12.63,Veg
+252,Soy sauce,43.55,Vegan
+253,Mango sticky rice,37.68,Non-Veg
+254,Ramen,55.93,Vegan
+255,Tourtiere,20.92,Vegan
+256,Tartiflette,30.22,Non-Veg
+257,Okonomiyaki,13.17,Vegan
+258,Crepe,33.34,Non-Veg
+259,Burrito,27.35,Vegan
+260,Samosas,47.25,Vegan
+261,Crema catalana,52.14,Veg
+262,Rice and beans,54.55,Non-Veg
+263,Nasi lemak,21.97,Non-Veg
+264,Leberknodel,57.39,Vegan
+265,Puff pastry,12.89,Non-Veg
+266,Meat pie,57.45,Veg
+267,Crema catalana,12.65,Veg
+268,Gazpacho,41.13,Veg
+269,Bibimbap,35.7,Non-Veg
+270,Nasi goreng,14.21,Veg
+271,Spicy tuna roll,15.96,Veg
+272,Banh xeo,37.56,Vegan
+273,Coq au vin,12.2,Non-Veg
+274,Ceviche,43.67,Vegan
+275,Irish stew,20.34,Vegan
+276,Tapenade,47.84,Non-Veg
+277,Carpaccio,22.57,Non-Veg
+278,Shrimp scampi,52.26,Vegan
+279,Dosas,37.01,Vegan
+280,Tacos,25.43,Non-Veg
+281,Shrimp and grits,43.59,Vegan
+282,Zabaione,54.7,Veg
+283,Spinach dip,31.62,Non-Veg
+284,Magret de canard,33.42,Non-Veg
+285,Potato chips,18.76,Non-Veg
+286,Bouillabaisse,11.88,Veg
+287,Sachertorte,22.79,Vegan
+288,Briyani,22.31,Veg
+289,Rice and beans,15.1,Veg
+290,Moussaka,36.5,Veg
+291,Pierogi,49.94,Non-Veg
+292,Feijoada,26.9,Non-Veg
+293,Mole poblano,55.68,Veg
+294,Gheymeh,15.92,Vegan
+295,Steamed clams,27.23,Vegan
+296,Lentil soup,46.18,Vegan
+297,Soupe a l'oignon,39.56,Veg
+298,Ice cream,14.86,Non-Veg
+299,Efo riro,19.06,Non-Veg
+300,T-bone steak,48.77,Vegan
+301,Camarones al ajillo,27.64,Veg
+302,Kunafa,19.94,Non-Veg
+303,Flan,59.89,Non-Veg
+304,Skordalia,49.86,Veg
+305,Marinated anchovies,15.04,Vegan
+306,Simit,34.92,Non-Veg
+307,Sachertorte,22.8,Vegan
+308,Falafel,54.05,Vegan
+309,Ramen,49.62,Veg
+310,Rueben,17.25,Veg
+311,Nems,32.88,Non-Veg
+312,Potato chips,12.35,Veg
+313,Tiramisu,52.9,Non-Veg
+314,Serradura,48.21,Non-Veg
+315,T-bone steak,51.24,Veg
+316,Pudding,28.25,Vegan
+317,Keema,34.73,Vegan
+318,Murgh musallam,10.36,Veg
+319,Spaghetti alla puttanesca,30.1,Veg
+320,Syrniki,22.75,Vegan
+321,Tamales,14.38,Veg
+322,Soy sauce,22.89,Vegan
+323,Doro wat,42.78,Veg
+324,General Tso's chicken,42.69,Non-Veg
+325,Carne asada,24.08,Veg
+326,Steak and kidney pie,16.67,Vegan
+327,Tacos,53.93,Veg
+328,Bagel and lox,18.85,Veg
+329,Cassoulet,35.34,Non-Veg
+330,Yellowtail sashimi,22.19,Non-Veg
+331,Tagine,48.88,Veg
+332,Gimbap,11.25,Veg
+333,Fried rice,27.39,Non-Veg
+334,Vegetable curry,14.03,Vegan
+335,Churros,31.35,Vegan
+336,Pozole,54.74,Vegan
+337,Vegetable stir-fry,33.77,Vegan
+338,Phat si-io,32.53,Vegan
+339,Prawn cocktail,44.41,Veg
+340,Osso buco,39.31,Vegan
+341,Mahi mahi,57.87,Non-Veg
+342,Hungarian goulash,47.78,Non-Veg
+343,Lumpia,29.31,Veg
+344,Empanada,11.26,Vegan
+345,Panzanella,39.8,Veg
+346,Caesar salad,12.24,Non-Veg
+347,Cheese fondue,11.1,Vegan
+348,Quiche,24.76,Veg
+349,Magret de canard,37.07,Veg
+350,Tiramisu,11.9,Vegan
+351,Chana masala,19.54,Veg
+352,Tuna salad,12.27,Vegan
+353,Gimbap,26.87,Non-Veg
+354,Kway teow,56.82,Non-Veg
+355,Eggplant parmesan,51.93,Vegan
+356,Lumpia,54.53,Veg
+357,Coq au vin,59.93,Veg
+358,Rou jia mo,39.48,Vegan
+359,Fish and chips,54.57,Veg
+360,Potato chips,43.29,Non-Veg
+361,Punjabi kadhi,47.01,Non-Veg
+362,Coq au vin,55.29,Vegan
+363,Salmagundi,46.98,Non-Veg
+364,Onion soup,15.84,Non-Veg
+365,Funnel cake,12.8,Vegan
+366,Montadito,36.02,Vegan
+367,Vegetable curry,52.88,Non-Veg
+368,Saganaki,35.71,Non-Veg
+369,Banh cuon,57.63,Non-Veg
+370,Samosas,37.24,Vegan
+371,Momo,19.75,Veg
+372,Chivito,13.81,Veg
+373,Hawaiian pizza,30.89,Vegan
+374,Zuppa Inglese,55.9,Veg
+375,Meat pie,55.83,Veg
+376,Pirozhki,59.98,Veg
+377,Peperonata,27.82,Veg
+378,Pancakes,15.29,Vegan
+379,Mac and cheese,17.8,Vegan
+380,Doner kebab,58.04,Vegan
+381,Raita,12.4,Vegan
+382,Snert,16.04,Vegan
+383,Nasi uduk,48.6,Veg
+384,Mafe,19.52,Vegan
+385,Seafood pizza,28.06,Veg
+386,Seafood pizza,54.88,Veg
+387,Bak chor mee,43.11,Non-Veg
+388,Tuna salad,41.73,Vegan
+389,Dan dan noodles,27.17,Non-Veg
+390,Sandwich,48.44,Vegan
+391,Canh chua,47.98,Non-Veg
+392,Mole poblano,18.06,Veg
+393,Turducken,46.11,Veg
+394,Shrimp cocktail,10.16,Vegan
+395,Navarin,47.16,Non-Veg
+396,Clam chowder,30.68,Vegan
+397,Sour cream,54.53,Vegan
+398,Bibimbap,34.31,Vegan
+399,Mantl,34.69,Non-Veg
+400,Bulgogi,54.24,Non-Veg
+401,Gnocchi,58.31,Vegan
+402,Zuppa Inglese,22.69,Non-Veg
+403,Caprese salad,36.42,Vegan
+404,Monkey bread,30.74,Non-Veg
+405,Smoked salmon,26.69,Non-Veg
+406,Bulgogi,19.88,Vegan
+407,Egg drop soup,34.93,Vegan
+408,Biryani,54.72,Vegan
+409,Kabsa,20.21,Veg
+410,Smoked salmon,23.43,Veg
+411,Efo riro,53.55,Veg
+412,Pirozhki,28.21,Non-Veg
+413,Tomatoes Provencal,44.3,Vegan
+414,Ham and cheese sandwich,22.32,Veg
+415,Lemon chicken,30.08,Vegan
+416,Penne alla vodka,50.5,Vegan
+417,Hungarian goulash,41.68,Non-Veg
+418,Arepa,28.57,Vegan
+419,Kung pao chicken,37.81,Vegan
+420,Briyani,28.92,Vegan
+421,Kung pao chicken,21.19,Veg
+422,Pappardelle al ragu,32.85,Vegan
+423,Socca,34.61,Non-Veg
+424,Burrito,13.81,Veg
+425,Guo tie,53.55,Veg
+426,Nikujaga,18.63,Non-Veg
+427,Ratatouille,41.48,Vegan
+428,Meen moilee,17.65,Veg
+429,Thai basil chicken,37.73,Vegan
+430,Bouillabaisse,25.61,Veg
+431,Soupe a l'oignon,30.18,Vegan
+432,Gravlax,18.21,Non-Veg
+433,Tuna salad,56.6,Vegan
+434,Tiramisu,51.82,Non-Veg
+435,Keema,42.96,Vegan
+436,Yakitori,21.13,Vegan
+437,Tortellini,31.46,Non-Veg
+438,Maki,39.48,Non-Veg
+439,Tandoori chicken,31.4,Vegan
+440,Meat pie,52.3,Veg
+441,Pakora,47.38,Veg
+442,Punjabi kadhi,44.28,Non-Veg
+443,Bratwurst,35.35,Non-Veg
+444,Fried rice,39.82,Vegan
+445,Malai kofta,49.81,Veg
+446,Tuna salad,56.83,Veg
+447,Bak chor mee,13.18,Non-Veg
+448,Chorizo,30.91,Non-Veg
+449,Mozzarella sticks,30.09,Veg
+450,Souffle,47.92,Vegan
+451,Raita,24.36,Vegan
+452,Kedgeree,28.41,Veg
+453,Dosas,41.8,Vegan
+454,Canh chua,23.3,Non-Veg
+455,Leche flan,18.67,Veg
+456,Jamaican jerk chicken,13.74,Non-Veg
+457,Haslet,37.0,Vegan
+458,Squid ink pasta,22.91,Vegan
+459,Chirashi sushi,16.79,Vegan
+460,Konigsberger Klopse,28.97,Vegan
+461,Sushi,23.54,Veg
+462,Chicken korma,33.21,Non-Veg
+463,Hot chicken,51.25,Non-Veg
+464,Pate en croute,59.59,Non-Veg
+465,Zabaione,24.33,Veg
+466,Tteokbokki,42.34,Vegan
+467,Umami burger,52.76,Non-Veg
+468,Laverbread,29.36,Vegan
+469,Welsh rarebit,31.88,Vegan
+470,Saumagen,51.97,Veg
+471,Ice cream,40.97,Non-Veg
+472,Cornish pasty,24.04,Veg
+473,Fish and chips,24.26,Veg
+474,Moambe,39.06,Veg
+475,Sauerbraten,31.17,Veg
+476,Tandoori chicken,28.98,Vegan
+477,Sorrel,25.53,Non-Veg
+478,Chowder,12.18,Non-Veg
+479,Miso soup,18.6,Veg
+480,Kaiserschmarrn,15.66,Vegan
+481,Souffle,42.29,Veg

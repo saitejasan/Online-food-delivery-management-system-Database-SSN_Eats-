@@ -1,0 +1,30 @@
+DeliveryPartners Table:
+dpid → type, username, password, firstname, lastname, age, email, mobile, ssn, sex, address, city, state, zip
+(username, password) → dpid, type, firstname, lastname, age, email, mobile, ssn, sex, address, city, state, zip
+
+MenuItems Table:
+itemid → itemname, price, type
+
+orderdetails Table:
+orderdetailid → orderid, itemid, preparationtime, deliverytime, totaltime
+
+Orders Table:
+orderid → ordernumber, restaurantid, userid, dpid
+ordernumber → orderid, restaurantid, userid, dpid
+
+Owners Table:
+ownerid → firstname, lastname, gender, mobile, email, address, city, state, zip
+
+Restaurants Table:
+However, the table contains transitive dependencies, such as restaurantid → itemid and restaurantid → ownerid, which violate the Third Normal Form (3NF). To make the table comply with BCNF, we need to break it down into separate tables that eliminate these transitive dependencies.
+Create a new table restaurantitems to store the relationship between restaurants and their menu items.
+
+restaurantid → ownerid, restaurantname, address, city, state, zip, phone
+
+RestaurantItems:
+restaurantid, itemid → (composite primary key)
+
+Users Table:
+userid -> firstname, lastname, age, sex, email, mobile, address, city, state, zip
+
+

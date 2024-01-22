@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('header') %>
+    <title>Menu Items</title>
+    <style>
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      th, td {
+        text-align: left;
+        padding: 8px;
+        border-bottom: 1px solid #ddd;
+      }
+
+      th {
+        background-color: #4CAF50;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Menu Items</h1>
+    <form method="post" action="/menuitems">
+      <label for="itemname">Item Name:</label>
+      <input type="text" id="itemname" name="itemname"><br>
+  
+      <label for="price">Price:</label>
+      <input type="number" id="price" name="price" step="0.01"><br>
+  
+      <label for="type">Type:</label>
+      <input type="text" id="type" name="type"><br>
+  
+      <button type="submit">Add Item</button>
+    </form>
+    <form id="search-form">
+      <label for="search-input">Search:</label>
+      <input type="text" id="search-input" name="search">
+      <button type="submit">Search</button>
+    </form>    
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Type</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% menuitems.forEach(function(mi) { %>
+          <tr>
+            <td><%= mi.itemid %></td>
+            <td><%= mi.itemname %></td>
+            <td>$<%= mi.price %></td>
+            <td><%= mi.type %></td>
+            <td><button class="delete-menuitem" data-itemid="<%= mi.itemid %>">Delete</button></td>
+          </tr>
+        <% }); %>
+      </tbody>
+    </table>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- Add this script at the end of the <body> tag -->
+<script>
+  $(document).ready(function() {
+    $('.delete-menuitem').click(function() {
+      const itemid = $(this).data('itemid');
+      
+      $.ajax({
+        url: `/menuitems/${itemid}`,
+        type: 'DELETE',
+        success: function(result) {
+          location.reload();
+        },
+        error: function(err) {
+          alert('Error: Could not delete menu item.');
+        }
+      });
+    });
+  });
+</script>
+<script>
+  $('#search-form').submit(function(e) {
+    e.preventDefault();
+    const searchTerm = $('#search-input').val().toLowerCase();
+    $('tbody tr').each(function() {
+      const rowText = $(this).text().toLowerCase();
+      if (rowText.indexOf(searchTerm) !== -1) {
+        $(this).show();
+      } else {
+        $(this).hide();
+      }
+    });
+  });
+</script>
+
+  </body>
+</html>

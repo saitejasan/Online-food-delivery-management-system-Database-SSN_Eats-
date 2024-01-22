@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('header') %>
+    <title>Restaurant Items</title>
+    <style>
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      th, td {
+        text-align: left;
+        padding: 8px;
+        border-bottom: 1px solid #ddd;
+      }
+
+      th {
+        background-color: #4CAF50;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Restaurant Items</h1>
+    <form action="/restaurant_items" method="post">
+      <label for="restaurantid">Restaurant ID:</label>
+      <input type="number" name="restaurantid" id="restaurantid" required><br>
+      
+      <label for="itemid">Item ID:</label>
+      <input type="number" name="itemid" id="itemid" required><br>
+    
+      <button type="submit">Add Restaurant Item</button>
+    </form> 
+    <form id="search-form">
+      <label for="search-input">Search:</label>
+      <input type="text" id="search-input" name="search">
+      <button type="submit">Search</button>
+    </form>
+       
+    <table>
+      <thead>
+        <tr>
+          <th>Restaurant ID</th>
+          <th>Item ID</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% restaurant_items.forEach(function(ri) { %>
+          <tr>
+            <td><%= ri.restaurantid %></td>
+            <td><%= ri.itemid %></td>
+            <td><button class="delete-restaurant-item" data-restaurantid="<%= ri.restaurantid %>" data-itemid="<%= ri.itemid %>">Delete</button></td>
+          </tr>
+        <% }); %>
+      </tbody>
+    </table>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+  $(document).ready(function() {
+    $('.delete-restaurant-item').click(function() {
+      const restaurantid = $(this).data('restaurantid');
+      const itemid = $(this).data('itemid');
+      
+      $.ajax({
+        url: `/restaurant_items/${restaurantid}/${itemid}`,
+        type: 'DELETE',
+        success: function(result) {
+          location.reload();
+        },
+        error: function(err) {
+          alert('Error: Could not delete restaurant item.');
+        }
+      });
+    });
+  });
+</script>
+<script>
+  $('#search-form').submit(function(e) {
+    e.preventDefault();
+    const searchTerm = $('#search-input').val().toLowerCase();
+    $('tbody tr').each(function() {
+      const rowText = $(this).text().toLowerCase();
+      if (rowText.indexOf(searchTerm) !== -1) {
+        $(this).show();
+      } else {
+        $(this).hide();
+      }
+    });
+  });
+</script>
+  </body>
+</html>

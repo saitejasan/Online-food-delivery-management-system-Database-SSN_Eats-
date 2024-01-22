@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('header') %>
+    <title>Users</title>
+    <style>
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      th, td {
+        text-align: left;
+        padding: 8px;
+        border-bottom: 1px solid #ddd;
+      }
+
+      th {
+        background-color: #4CAF50;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Users</h1>
+    <form action="/users" method="post">
+      <label for="firstname">First Name:</label>
+      <input type="text" name="firstname" id="firstname" required><br>
+      
+      <label for="lastname">Last Name:</label>
+      <input type="text" name="lastname" id="lastname" required><br>
+      
+      <label for="age">Age:</label>
+      <input type="number" name="age" id="age" required><br>
+      
+      <label for="sex">Sex:</label>
+      <input type="text" name="sex" id="sex" required><br>
+      
+      <label for="email">Email:</label>
+      <input type="email" name="email" id="email" required><br>
+      
+      <label for="mobile">Mobile:</label>
+      <input type="text" name="mobile" id="mobile" required><br>
+      
+      <label for="aid">Aid:</label>
+      <input type="number" name="aid" id="aid" required><br>
+    
+      <button type="submit">Add User</button>
+    </form> 
+    <form id="search-form">
+      <label for="search-input">Search:</label>
+      <input type="text" id="search-input" name="search">
+      <button type="submit">Search</button>
+    </form>
+       
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Age</th>
+          <th>Sex</th>
+          <th>Email</th>
+          <th>Mobile</th>
+          <th>AID</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% users.forEach(function(u) { %>
+          <tr>
+            <td><%= u.userid %></td>
+            <td><%= u.firstname %></td>
+            <td><%= u.lastname %></td>
+            <td><%= u.age %></td>
+            <td><%= u.sex %></td>
+            <td><%= u.email %></td>
+            <td><%= u.mobile %></td>
+            <td><%= u.aid %></td>
+            <td><button class="delete-user" data-userid="<%= u.userid %>">Delete</button></td>
+          </tr>
+        <% }); %>
+      </tbody>
+    </table>
+    <!-- Add this line inside the <head> tag to include the JQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<!-- Add this script at the end of the <body> tag -->
+<script>
+  $(document).ready(function() {
+    $('.delete-user').click(function() {
+      const userId = $(this).data('userid');
+      
+      $.ajax({
+        url: `/users/${userId}`,
+        type: 'DELETE',
+        success: function(result) {
+          location.reload();
+        },
+        error: function(err) {
+          alert('Error: Could not delete user.');
+        }
+      });
+    });
+  });
+</script>
+<script>
+  $('#search-form').submit(function(e) {
+    e.preventDefault();
+    const searchTerm = $('#search-input').val().toLowerCase();
+    $('tbody tr').each(function() {
+      const rowText = $(this).text().toLowerCase();
+      if (rowText.indexOf(searchTerm) !== -1) {
+        $(this).show();
+      } else {
+        $(this).hide();
+      }
+    });
+  });
+</script>
+
+  </body>
+</html>

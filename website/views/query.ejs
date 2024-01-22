@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SQL Query</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  </head>
+  <body>
+    <%- include('header') %>
+    <h1>SQL Query</h1>
+    <form>
+      <textarea id="query" rows="10" cols="50"></textarea><br>
+      <button type="button" onclick="executeQuery()">Execute</button>
+    </form>
+    <div id="result-container"></div>
+
+    <script>
+        function executeQuery() {
+          var query = $("#query").val();
+        
+          $.ajax({
+            url: "/query",
+            type: "POST",
+            data: { query: query },
+            success: function(result) {
+                if (!result.success) {
+                  console.error(result.message);
+                  return;
+                }
+
+                let keys = Object.keys(result.rows[0]);
+                var html = "<table>";
+                html += "<tr>";
+
+                for (var i = 0; i < keys.length; i++) {
+                  html += "<th>" + keys[i] + "</th>";
+                }
+
+                html += "</tr>";
+
+                for (var i = 0; i < result.rows.length; i++) {
+                  html += "<tr>";
+                  for (var j = 0; j < keys.length; j++) {
+                    html += "<td>" + result.rows[i][keys[j]] + "</td>";
+                  }
+                  html += "</tr>";
+                }
+                html += "</table>";
+                $("#result-container").html(html); // Append table inside div
+            },
+            error: function(xhr, status, error) {
+              console.error(xhr.responseText);
+            }
+          });
+        }
+    </script>
+  </body>
+</html>

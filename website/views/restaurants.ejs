@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('header') %>
+    <title>Restaurants</title>
+    <style>
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      th, td {
+        text-align: left;
+        padding: 8px;
+        border-bottom: 1px solid #ddd;
+      }
+
+      th {
+        background-color: #4CAF50;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Restaurants</h1>
+    <form action="/restaurants" method="post">
+      <label for="ownerid">Owner ID:</label>
+      <input type="number" name="ownerid" id="ownerid" required><br>
+      
+      <label for="restaurantname">Restaurant Name:</label>
+      <input type="text" name="restaurantname" id="restaurantname" required><br>
+      
+      <label for="phone">Phone:</label>
+      <input type="text" name="phone" id="phone" required><br>
+
+      <label for="aid">Aid:</label>
+      <input type="number" name="aid" id="aid" required><br>
+      
+      <button type="submit">Add Restaurant</button>
+      
+      </form>
+      <form id="search-form">
+        <label for="search-input">Search:</label>
+        <input type="text" id="search-input" name="search">
+        <button type="submit">Search</button>
+      </form>
+      
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Owner ID</th>
+          <th>Name</th>
+          <th>Phone</th>
+          <th>AID</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% restaurants.forEach(function(r) { %>
+          <tr>
+            <td><%= r.restaurantid %></td>
+            <td><%= r.ownerid %></td>
+            <td><%= r.restaurantname %></td>
+            <td><%= r.phone %></td>
+            <td><%= r.aid %></td>
+            <td><button class="delete-restaurant" data-restaurantid="<%= r.restaurantid %>">Delete</button></td>
+          </tr>
+        <% }); %>
+      </tbody>
+    </table>
+    <!-- Add this script at the end of the <body> tag -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+  $(document).ready(function() {
+    $('.delete-restaurant').click(function() {
+      const restaurantId = $(this).data('restaurantid');
+      
+      $.ajax({
+        url: `/restaurants/${restaurantId}`,
+        type: 'DELETE',
+        success: function(result) {
+          location.reload();
+        },
+        error: function(err) {
+          alert('Error: Could not delete restaurant.');
+        }
+      });
+    });
+  });
+</script>
+<script>
+  $('#search-form').submit(function(e) {
+    e.preventDefault();
+    const searchTerm = $('#search-input').val().toLowerCase();
+    $('tbody tr').each(function() {
+      const rowText = $(this).text().toLowerCase();
+      if (rowText.indexOf(searchTerm) !== -1) {
+        $(this).show();
+      } else {
+        $(this).hide();
+      }
+    });
+  });
+</script>
+
+  </body>
+</html>

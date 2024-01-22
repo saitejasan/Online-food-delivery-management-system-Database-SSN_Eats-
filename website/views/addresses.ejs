@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('header') %>
+    <title>Addresses</title>
+    <style>
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      th, td {
+        text-align: left;
+        padding: 8px;
+        border-bottom: 1px solid #ddd;
+      }
+
+      th {
+        background-color: #4CAF50;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Addresses</h1>
+    <form method="post" action="/addresses">
+      <label for="address">Address:</label>
+      <input type="text" id="address" name="address"><br>
+    
+      <label for="city">City:</label>
+      <input type="text" id="city" name="city"><br>
+    
+      <label for="state">State:</label>
+      <input type="text" id="state" name="state"><br>
+    
+      <label for="zip">Zip:</label>
+      <input type="number" id="zip" name="zip"><br>
+    
+      <button type="submit">Add Address</button>
+    </form>
+    <form id="search-form">
+        <label for="search-input">Search:</label>
+        <input type="text" id="search-input" name="search">
+        <button type="submit">Search</button>
+    </form>
+    <table>
+      <thead>
+        <tr>
+          <th>AID</th>
+          <th>Address</th>
+          <th>City</th>
+          <th>State</th>
+          <th>Zip</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% addresses.forEach(function(addr) { %>
+          <tr>
+            <td><%= addr.aid %></td>
+            <td><%= addr.address %></td>
+            <td><%= addr.city %></td>
+            <td><%= addr.state %></td>
+            <td><%= addr.zip %></td>
+            <td><button class="delete-address" data-aid="<%= addr.aid %>">Delete</button></td>
+          </tr>
+        <% }); %>
+      </tbody>
+    </table>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $('.delete-address').click(function() {
+          const aid = $(this).data('aid');
+
+          $.ajax({
+            url: `/addresses/${aid}`,
+            type: 'DELETE',
+            success: function(result) {
+              location.reload();
+            },
+            error: function(err) {
+              alert('Error: Could not delete address.');
+            }
+          });
+        });
+      });
+    </script>
+    <script>
+        $('#search-form').submit(function(e) {
+          e.preventDefault();
+          const searchTerm = $('#search-input').val().toLowerCase();
+          $('tbody tr').each(function() {
+            const rowText = $(this).text().toLowerCase();
+            if (rowText.indexOf(searchTerm) !== -1) {
+              $(this).show();
+            } else {
+              $(this).hide();
+            }
+          });
+        });
+      </script>
+  </body>
+</html>

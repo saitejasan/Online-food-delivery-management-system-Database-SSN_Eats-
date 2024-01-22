@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('header') %>
+    <title>Delivery Partners</title>
+    <style>
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      th, td {
+        text-align: left;
+        padding: 8px;
+        border-bottom: 1px solid #ddd;
+      }
+
+      th {
+        background-color: #4CAF50;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Delivery Partners</h1>
+    <form method="post" action="/deliverypartners">
+      <label for="type">Type:</label>
+      <input type="text" id="type" name="type"><br>
+    
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username"><br>
+    
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password"><br>
+    
+      <label for="firstname">First name:</label>
+      <input type="text" id="firstname" name="firstname"><br>
+    
+      <label for="lastname">Last name:</label>
+      <input type="text" id="lastname" name="lastname"><br>
+    
+      <label for="age">Age:</label>
+      <input type="number" id="age" name="age"><br>
+    
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email"><br>
+    
+      <label for="mobile">Mobile:</label>
+      <input type="tel" id="mobile" name="mobile"><br>
+    
+      <label for="ssn">SSN:</label>
+      <input type="text" id="ssn" name="ssn"><br>
+    
+      <label for="sex">Sex:</label>
+      <input type="text" id="sex" name="sex"><br>
+    
+      <label for="aid">Aid:</label>
+      <input type="number" id="aid" name="aid"><br>
+    
+      <button type="submit">Add Delivery Partner</button>
+    </form>
+    <!-- Add a search form above the table -->
+<form id="search-form">
+  <label for="search-input">Search:</label>
+  <input type="text" id="search-input" name="search">
+  <button type="submit">Search</button>
+</form>
+    
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Type</th>
+          <th>Username</th>
+          <th>Password</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Age</th>
+          <th>Email</th>
+          <th>Mobile</th>
+          <th>SSN</th>
+          <th>Sex</th>
+          <th>AID</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% deliverypartners.forEach(function(dp) { %>
+          <tr>
+            <td><%= dp.dpid %></td>
+            <td><%= dp.type %></td>
+            <td><%= dp.username %></td>
+            <td><%= dp.password %></td>
+            <td><%= dp.firstname %></td>
+            <td><%= dp.lastname %></td>
+            <td><%= dp.age %></td>
+            <td><%= dp.email %></td>
+            <td><%= dp.mobile %></td>
+            <td><%= dp.ssn %></td>
+            <td><%= dp.sex %></td>
+            <td><%= dp.aid %></td>
+            <td><button class="delete-deliverypartner" data-dpid="<%= dp.dpid %>">Delete</button></td>
+          </tr>
+        <% }); %>
+      </tbody>
+    </table>
+    <!-- Add this script at the end of the <body> tag -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+  $(document).ready(function() {
+    $('.delete-deliverypartner').click(function() {
+      const dpid = $(this).data('dpid');
+      
+      $.ajax({
+        url: `/deliverypartners/${dpid}`,
+        type: 'DELETE',
+        success: function(result) {
+          location.reload();
+        },
+        error: function(err) {
+          alert('Error: Could not delete delivery partner.');
+        }
+      });
+    });
+  });
+</script>
+<!-- Add this script after the delete script -->
+<script>
+  $('#search-form').submit(function(e) {
+    e.preventDefault();
+    const searchTerm = $('#search-input').val().toLowerCase();
+    $('tbody tr').each(function() {
+      const rowText = $(this).text().toLowerCase();
+      if (rowText.indexOf(searchTerm) !== -1) {
+        $(this).show();
+      } else {
+        $(this).hide();
+      }
+    });
+  });
+</script>
+
+  </body>
+</html>
